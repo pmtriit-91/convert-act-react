@@ -128,6 +128,10 @@
                 font-size: 1.2rem;
                 font-weight: 600;
                 border-radius: 8px;
+
+                &:hover{
+                    background-color: rgba(255, 0, 0, 0.8);
+                }
             }
 
             .btn-text {
@@ -1253,8 +1257,9 @@
         }
 
         .why-use {
-            background-image: url(../../assets/images/why-use-mobile.png);
-
+            background-image: url('../../assets/images/why-use-mobile.webp');
+            background-size: inherit;
+            background-repeat: no-repeat;
             .why-use-left {
                 .wrapper-question {
                     height: 350px;
@@ -1310,7 +1315,7 @@
         }
 
         .price-bg {
-            background-image: url(../../assets/images/bg-price-mobile.webp);
+            background-image: url('../../assets/images/bg-price-mobile.webp');
             background-repeat: repeat;
         }
     }

@@ -3,7 +3,6 @@ import { Layout, Row, Col, Typography } from 'antd'
 import { CaretRightOutlined } from '@ant-design/icons'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { gsap, TextPlugin } from 'gsap/all'
-// import { Button } from 'antd'
 
 import './home.scss'
 
@@ -145,28 +144,29 @@ function Home() {
             ease: "power2.in",
         })
 
-        gsap.from('.icon-check', {
-            scrollTrigger: {
-                trigger: '.icon-check',
-                toggleActions: 'restart none none none',
-            },
-            opacity: 0,
-            rotateY: 360,
-            duration: 0.3,
-            stagger: 0.3,
-            ease: "power2.in",
-        })
+        // if (window.innerWidth >= 1200) {
+        //     gsap.from('.icon-check', {
+        //         scrollTrigger: {
+        //             trigger: '.icon-check',
+        //             // toggleActions: 'restart none none none',
+        //         },
+        //         opacity: 0,
+        //         rotateY: 360,
+        //         duration: 0.3,
+        //         stagger: 0.3,
+        //         ease: "power2.in",
+        //     })
 
-        gsap.from('.text-description', {
-            scrollTrigger: {
-                trigger: '.text-description',
-                toggleActions: 'restart none none none',
-            },
-            opacity: 0,
-            duration: 0.3,
-            stagger: 0.3,
-            ease: "power2.in",
-        })
+        //     gsap.from('.text-description', {
+        //         scrollTrigger: {
+        //             trigger: '.text-description',
+        //         },
+        //         opacity: 0,
+        //         duration: 0.3,
+        //         stagger: 0.3,
+        //         ease: "power2.in",
+        //     })
+        // }
 
         document.querySelectorAll('.img-item').forEach((elm) => {
             gsap.from(elm, { rotationY: -360, scrollTrigger: { trigger: elm, toggleActions: 'restart none restart none' }, duration: 2 })
@@ -229,9 +229,9 @@ function Home() {
                     <div className="container">
                         <Row gutter={30} className=" fitscreen">
                             <Col lg={9} md={9} sm={24} className="wrapper-content-app">
-                                <img src="../images/iphonenew.webp" alt="iphone-left" className="img-fluid iphone-img" />
+                                <img src="../images/iphonenew.webp" alt="iphone-left" className="iphone-img" />
                                 <div className="div-qr">
-                                    <img src="../images/qr1.png" alt="qr" className="img-fluid qr" />
+                                    <img src="../images/qr1.png" alt="qr" className="qr" />
                                     <a href="http://onelink.to/ppfgn7" className='btn-web flex-center btn-first'>
                                         TẢI VỀ ĐIỆN THOẠI
                                     </a>

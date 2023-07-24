@@ -73,10 +73,10 @@ function ThemeHeader() {
                     <div className='flex-center'>
                         <div className={cx("main-menu-mobile")}>
                             <ul className={cx("list-item")}>
-                                <li><a href={`/#top`}>Giới thiệu</a></li>
-                                <li><a href={`/#features`} >Tính năng</a></li>
-                                <li><a href={`/#price`} >Thu phí</a></li>
-                                <li><a href={`/#contact`}>Liên hệ</a></li>
+                                <li><a title='Giới thiệu' href={`/#top`}>Giới thiệu</a></li>
+                                <li><a title='Tính năng' href={`/#features`} >Tính năng</a></li>
+                                <li><a title='Thu phí' href={`/#price`} >Thu phí</a></li>
+                                <li><a title='Liên hệ' href={`/#contact`}>Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>

@@ -122,7 +122,7 @@ function Footer() {
 
                 <footer className="default-footer">
                     <div className="container">
-                        <div className="d-flex space-between no-flex-xs">
+                        <div className="d-flex space-between mobile-center no-flex-xs">
                             <div className="footer-copy-right">
                                 <Paragraph className='title-bottom-footer'>&copy; {(new Date().getFullYear())}<span>|</span><a href="/#top">ACT đồng hành sản xuất cửa cùng bạn</a></Paragraph>
                             </div>

@@ -290,5 +290,22 @@
                 }
             }
         }
+
+        .default-footer {
+            padding: 0;
+            .mobile-center{
+                align-items: center;
+            }
+            .footer-copy-right {
+                font-size: 1rem;
+            }
+            .footer-social-link{
+                margin-top: 0;
+                a{
+                    width: 22px;
+                    line-height: 20px;
+                }
+            }
+        }
     }
 }
