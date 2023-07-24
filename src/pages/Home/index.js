@@ -40,180 +40,181 @@ function Home() {
                 .from('.phone_right', { rotateZ: 90, y: -200 }, 1)
         }
 
-        // gsap.to(tinhnang1.current, {
-        //     scrollTrigger: {
-        //         trigger: tinhnang1.current,
-        //         toggleActions: 'restart pause resume none',
-        //     },
-        //     text: 'PHIÊN BẢN MẪU CÓ SẴN',
-        //     duration: 1,
-        //     ease: "none",
-        // }, '+=0.5')
+        gsap.to(tinhnang1.current, {
+            scrollTrigger: {
+                trigger: tinhnang1.current,
+                toggleActions: 'restart pause resume none',
+            },
+            text: 'PHIÊN BẢN MẪU CÓ SẴN',
+            duration: 1,
+            ease: "none",
+        }, '+=0.5')
 
-        // gsap.to(tinhnang2.current, {
-        //     scrollTrigger: {
-        //         trigger: tinhnang2.current,
-        //         toggleActions: 'restart pause resume none',
-        //     },
-        //     text: 'PHIÊN BẢN TỰ THIẾT KẾ',
-        //     duration: 1,
-        //     ease: "none",
-        // }, '+=0.5')
+        gsap.to(tinhnang2.current, {
+            scrollTrigger: {
+                trigger: tinhnang2.current,
+                toggleActions: 'restart pause resume none',
+            },
+            text: 'PHIÊN BẢN TỰ THIẾT KẾ',
+            duration: 1,
+            ease: "none",
+        }, '+=0.5')
 
-        // gsap.to('.act-sub-4', {
-        //     scrollTrigger: {
-        //         trigger: '.act-sub-4',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     delay: 0.5,
-        //     text: 'TẠI SAO',
-        //     duration: 2,
-        //     ease: "expo.out",
-        // })
+        gsap.to('.act-sub-4', {
+            scrollTrigger: {
+                trigger: '.act-sub-4',
+                toggleActions: 'restart none none none',
+            },
+            delay: 0.5,
+            text: 'TẠI SAO',
+            duration: 2,
+            ease: "expo.out",
+        })
 
-        // gsap.from('.act-sub-3', {
-        //     scrollTrigger: {
-        //         trigger: '.act-sub-3',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     delay: 0.5,
-        //     scale: 1.6,
-        //     duration: 2,
-        //     ease: "bounce.out",
-        // })
+        gsap.from('.act-sub-3', {
+            scrollTrigger: {
+                trigger: '.act-sub-3',
+                toggleActions: 'restart none none none',
+            },
+            delay: 0.5,
+            scale: 1.6,
+            duration: 2,
+            ease: "bounce.out",
+        })
 
-        // gsap.from('.act-sub-2', {
-        //     scrollTrigger: {
-        //         trigger: '.act-sub-3',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     delay: 0.5,
-        //     x: 200,
-        //     duration: 2,
-        //     ease: "bounce.out",
-        // })
+        gsap.from('.act-sub-2', {
+            scrollTrigger: {
+                trigger: '.act-sub-3',
+                toggleActions: 'restart none none none',
+            },
+            opacity: 0,
+            delay: 0.5,
+            x: 150,
+            duration: 2,
+            ease: "bounce.out",
+        })
 
-        // gsap.from('.act-sub-1', {
-        //     scrollTrigger: {
-        //         trigger: '.act-sub-3',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     delay: 0.5,
-        //     opacity: 0,
-        //     duration: 1.5,
-        //     ease: "power2.in",
-        // })
+        gsap.from('.act-sub-1', {
+            scrollTrigger: {
+                trigger: '.act-sub-3',
+                toggleActions: 'restart none none none',
+            },
+            delay: 0.5,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power2.in",
+        })
 
-        // gsap.from('.act-question', {
-        //     scrollTrigger: {
-        //         trigger: '.act-sub-3',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     delay: 0.5,
-        //     opacity: 0,
-        //     y: 100,
-        //     duration: 1.5,
-        //     rotateX: -360,
-        //     ease: "power2.in",
-        // })
+        gsap.from('.act-question', {
+            scrollTrigger: {
+                trigger: '.act-sub-3',
+                toggleActions: 'restart none none none',
+            },
+            delay: 0.5,
+            opacity: 0,
+            y: 100,
+            duration: 1.5,
+            rotateX: -360,
+            ease: "power2.in",
+        })
 
-        // gsap.from('.img-question', {
-        //     scrollTrigger: {
-        //         trigger: '.act-sub-3',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     delay: 0.5,
-        //     opacity: 0,
-        //     y: 200,
-        //     x: 200,
-        //     rotation: 360,
-        //     scale: 0.5,
-        //     duration: 1.3,
-        //     ease: "bounce.out",
-        // })
+        gsap.from('.img-question', {
+            scrollTrigger: {
+                trigger: '.act-sub-3',
+                toggleActions: 'restart none none none',
+            },
+            delay: 0.5,
+            opacity: 0,
+            y: 200,
+            x: 100,
+            rotation: 360,
+            scale: 0.5,
+            duration: 1.3,
+            ease: "bounce.out",
+        })
 
-        // gsap.from('.logo-question', {
-        //     scrollTrigger: {
-        //         trigger: '.act-sub-3',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     opacity: 0,
-        //     rotateY: 360,
-        //     scale: 0.5,
-        //     duration: 1.3,
-        //     ease: "power2.in",
-        // })
+        gsap.from('.logo-question', {
+            scrollTrigger: {
+                trigger: '.act-sub-3',
+                toggleActions: 'restart none none none',
+            },
+            opacity: 0,
+            rotateY: 360,
+            scale: 0.5,
+            duration: 1.3,
+            ease: "power2.in",
+        })
 
-        // gsap.from('.icon-check', {
-        //     scrollTrigger: {
-        //         trigger: '.icon-check',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     opacity: 0,
-        //     rotateY: 360,
-        //     duration: 0.3,
-        //     stagger: 0.3,
-        //     ease: "power2.in",
-        // })
+        gsap.from('.icon-check', {
+            scrollTrigger: {
+                trigger: '.icon-check',
+                toggleActions: 'restart none none none',
+            },
+            opacity: 0,
+            rotateY: 360,
+            duration: 0.3,
+            stagger: 0.3,
+            ease: "power2.in",
+        })
 
-        // gsap.from('.text-description', {
-        //     scrollTrigger: {
-        //         trigger: '.text-description',
-        //         toggleActions: 'restart none none none',
-        //     },
-        //     opacity: 0,
-        //     duration: 0.3,
-        //     stagger: 0.3,
-        //     ease: "power2.in",
-        // })
+        gsap.from('.text-description', {
+            scrollTrigger: {
+                trigger: '.text-description',
+                toggleActions: 'restart none none none',
+            },
+            opacity: 0,
+            duration: 0.3,
+            stagger: 0.3,
+            ease: "power2.in",
+        })
 
-        // document.querySelectorAll('.img-item').forEach((elm) => {
-        //     gsap.from(elm, { rotationY: -360, scrollTrigger: { trigger: elm, toggleActions: 'restart none restart none' }, duration: 2 })
-        // })
+        document.querySelectorAll('.img-item').forEach((elm) => {
+            gsap.from(elm, { rotationY: -360, scrollTrigger: { trigger: elm, toggleActions: 'restart none restart none' }, duration: 2 })
+        })
 
-        // gsap.registerEffect({
-        //     name: 'scroll',
-        //     defaults: {
-        //         opacity: 0,
-        //         duration: 2.5,
-        //     },
-        //     effect: (targets, config) => {
-        //         return gsap.from(targets, {
-        //             ...config, y: -50,
-        //             scrollTrigger: {
-        //                 toggleActions: 'restart none none none',
-        //                 trigger: targets
-        //             }
-        //         })
-        //     }
-        // })
+        gsap.registerEffect({
+            name: 'scroll',
+            defaults: {
+                opacity: 0,
+                duration: 2.5,
+            },
+            effect: (targets, config) => {
+                return gsap.from(targets, {
+                    ...config, y: -50,
+                    scrollTrigger: {
+                        toggleActions: 'restart none none none',
+                        trigger: targets
+                    }
+                })
+            }
+        })
 
-        // gsap.effects.scroll(textTopLeft.current)
-        // gsap.effects.scroll(textBottomLeft.current)
-        // gsap.effects.scroll(textTopRight.current)
-        // gsap.effects.scroll(textBottomRight.current)
+        gsap.effects.scroll(textTopLeft.current)
+        gsap.effects.scroll(textBottomLeft.current)
+        gsap.effects.scroll(textTopRight.current)
+        gsap.effects.scroll(textBottomRight.current)
 
-        // gsap.effects.scroll(textTopLeft2.current)
-        // gsap.effects.scroll(textBottomLeft2.current)
-        // gsap.effects.scroll(textTopRight2.current)
-        // gsap.effects.scroll(textBottomRight2.current)
+        gsap.effects.scroll(textTopLeft2.current)
+        gsap.effects.scroll(textBottomLeft2.current)
+        gsap.effects.scroll(textTopRight2.current)
+        gsap.effects.scroll(textBottomRight2.current)
 
 
-        // const handleColorPrice = (event) => {
-        //     const elm = event.currentTarget
-        //     const textH3 = elm.querySelector('.text-h3')
+        const handleColorPrice = (event) => {
+            const elm = event.currentTarget
+            const textH3 = elm.querySelector('.text-h3')
 
-        //     gsap.fromTo(textH3, { scale: 0.5, duration: 0.5, rotateX: 180 }, { scale: 1, duration: 0.5, rotateX: 360 })
-        // }
-        // document.querySelectorAll('.price-color-4').forEach((elm) => {
-        //     elm.addEventListener('mouseenter', handleColorPrice)
-        // })
+            gsap.fromTo(textH3, { scale: 0.5, duration: 0.5, rotateX: 180 }, { scale: 1, duration: 0.5, rotateX: 360 })
+        }
+        document.querySelectorAll('.price-color-4').forEach((elm) => {
+            elm.addEventListener('mouseenter', handleColorPrice)
+        })
 
-        // return () => {
-        //     document.querySelectorAll('.price-color-4').forEach((elm) => {
-        //         elm.removeEventListener('mouseenter', handleColorPrice)
-        //     })
-        // }
+        return () => {
+            document.querySelectorAll('.price-color-4').forEach((elm) => {
+                elm.removeEventListener('mouseenter', handleColorPrice)
+            })
+        }
     }, [])
 
     return (
@@ -296,20 +297,20 @@ function Home() {
                                         <h1 ref={tinhnang1} className='text-tinhnang'></h1>
                                     </div>
                                     <div className='top-left'>
-                                        <h1 ref={textTopLeft} className='text-top-left'>Tính kích thước cắt nhôm, kính, phụ kiện, xuất bản vẽ sản xuất tránh tình trạng cắt sai.</h1>
+                                        <h1 ref={textTopLeft} className='text-top-left text-size-features'>Tính kích thước cắt nhôm, kính, phụ kiện, xuất bản vẽ sản xuất tránh tình trạng cắt sai.</h1>
                                     </div>
                                     <div className='bottom-left'>
-                                        <h1 ref={textBottomLeft} className='text-bottom-left'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</h1>
+                                        <h1 ref={textBottomLeft} className='text-bottom-left text-size-features'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</h1>
                                     </div>
                                     <div className='top-right'>
-                                        <h1 ref={textTopRight} className='text-top-right'>Tính giá từng bộ cửa và tổng hợp giá thành theo từng công trình cụ thể, tránh tình trạng làm không biết lời lỗ bao nhiêu.</h1>
+                                        <h1 ref={textTopRight} className='text-top-right text-size-features'>Tính giá từng bộ cửa và tổng hợp giá thành theo từng công trình cụ thể, tránh tình trạng làm không biết lời lỗ bao nhiêu.</h1>
                                     </div>
                                     <div className='bottom-right'>
-                                        <h1 ref={textBottomRight} className='text-bottom-right'> Đầy đủ hệ nhôm (được cập nhật thường xuyên) và đa dạng mẫu cửa cho người dùng lựa chọn.</h1>
+                                        <h1 ref={textBottomRight} className='text-bottom-right text-size-features'> Đầy đủ hệ nhôm (được cập nhật thường xuyên) và đa dạng mẫu cửa cho người dùng lựa chọn.</h1>
                                     </div>
                                     <img className='tinhnang_img' src='../images/tinhnang_icon.webp' alt='icon' />
                                 </div>
-                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='ripple-btn primary btn-phone btn-first color-4 mt-20 text-center btn-web flex-center btn-video'>
+                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='btn-web flex-center btn-video'>
                                     <div className='wrapper-video-btn'>
                                         <CaretRightOutlined className='icon-video' />
                                         XEM VIDEO BẢN MẪU CÓ SẴN
@@ -326,20 +327,20 @@ function Home() {
                                         <h1 ref={tinhnang2} className='text-tinhnang'></h1>
                                     </div>
                                     <div className='top-left'>
-                                        <h1 ref={textTopLeft2} className='text-top-left'>Tự vẽ được các dạng cửa theo ý muốn, có thể xuất bản vẽ hình dáng kích thước cửa để chốt quy cách với chủ nhà.</h1>
+                                        <h1 ref={textTopLeft2} className='text-top-left text-size-features'>Tự vẽ được các dạng cửa theo ý muốn, có thể xuất bản vẽ hình dáng kích thước cửa để chốt quy cách với chủ nhà.</h1>
                                     </div>
                                     <div className='bottom-left'>
-                                        <h1 ref={textBottomLeft2} className='text-bottom-left'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</h1>
+                                        <h1 ref={textBottomLeft2} className='text-bottom-left text-size-features'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</h1>
                                     </div>
                                     <div className='top-right top-right2'>
-                                        <h1 ref={textTopRight2} className='text-top-right'>Tích hợp báo giá chuyên nghiệp làm siêu nhanh, giúp việc làm báo giá trở nên dễ dàng và nhanh chóng chỉ bằng 1 vài click chuột.</h1>
+                                        <h1 ref={textTopRight2} className='text-top-right text-size-features'>Tích hợp báo giá chuyên nghiệp làm siêu nhanh, giúp việc làm báo giá trở nên dễ dàng và nhanh chóng chỉ bằng 1 vài click chuột.</h1>
                                     </div>
                                     <div className='bottom-right bottom-right2'>
-                                        <h1 ref={textBottomRight2} className='text-bottom-right'> Đầy đủ hệ nhôm<br /> (được cập nhật thường xuyên).</h1>
+                                        <h1 ref={textBottomRight2} className='text-bottom-right text-size-features'> Đầy đủ hệ nhôm<br /> (được cập nhật thường xuyên).</h1>
                                     </div>
                                     <img className='tinhnang_img' src='../images/tinhnang_icon.webp' alt='icon' />
                                 </div>
-                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='ripple-btn primary btn-phone btn-first color-4 mt-20 text-center btn-web flex-center btn-video btn-ttk'>
+                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='btn-web flex-center btn-video btn-video2'>
                                     <div className='wrapper-video-btn'>
                                         <CaretRightOutlined className='icon-video' />
                                         XEM THÊM THÔNG TIN BẢN TỰ THIẾT KẾ
@@ -349,76 +350,72 @@ function Home() {
                         </Col>
                     </Row>
                     {/* mobile */}
-                    <Row gutter={30} className="feature-mobile">
-                        <Col md={24}>
-                            <div className="single-feture">
-                                <div className='wrapper-content-mobile'>
-                                    <div className='tinhnang'>
-                                        <Paragraph className='text-tinhnang text-h1'>PHIÊN BẢN MẪU CÓ SẴN</Paragraph>
-                                    </div>
-                                    <div className='wrapper-tinhnang'>
-                                        <div className='tinhnang-item mb-50 mt-20'>
-                                            <img className='img-item' alt='icon-feature' src='../images/icon-feature1.png' />
-                                            <Paragraph className='text-h4'>Tính kích thước cắt nhôm, kính, phụ kiện, xuất bản vẽ sản xuất tránh tình trạng cắt sai.</Paragraph>
-                                        </div>
-                                        <div className='tinhnang-item mb-50'>
-                                            <img className='img-item' alt='icon-feature' src='../images/icon-feature2.png' />
-                                            <Paragraph className='text-h4'>Tính giá từng bộ cửa và tổng hợp giá thành theo từng công trình cụ thể, tránh tình trạng làm không biết lời lỗ bao nhiêu.</Paragraph>
-                                        </div>
-                                        <div className='tinhnang-item mb-50'>
-                                            <img className='img-item' alt='icon-feature' src='../images/icon-feature3.png' />
-                                            <Paragraph className='text-h4'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</Paragraph>
-                                        </div>
-                                        <div className='tinhnang-item mb-50'>
-                                            <img className='img-item' alt='icon-feature' src='../images/icon-feature4.png' />
-                                            <Paragraph className='text-h4'>Tính kích thước cắt nhôm, kính, phụ kiện, xuất bản vẽ sản xuất tránh tình trạng cắt sai.</Paragraph>
-                                        </div>
-                                    </div>
-                                    <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='ripple-btn primary btn-phone btn-first color-4 mt-20 text-center btn-web flex-center btn-video'>
-                                        <div className='wrapper-video-btn'>
-                                            <CaretRightOutlined className='icon-video' />
-                                            XEM VIDEO BẢN MẪU CÓ SẴN
-                                        </div>
-                                    </a>
+                    <div className="feature-mobile">
+                        <div className="single-feture">
+                            <div className='wrapper-content-mobile'>
+                                <div className='tinhnang'>
+                                    <Paragraph className='text-tinhnang text-h1'>PHIÊN BẢN MẪU CÓ SẴN</Paragraph>
                                 </div>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row gutter={30} className="feature-mobile">
-                        <Col md={24}>
-                            <div className="single-feture single-feture-bg">
-                                <div className='wrapper-content-mobile'>
-                                    <div className='tinhnang'>
-                                        <Paragraph className='text-tinhnang text-h1'>PHIÊN BẢN TỰ THIẾT KẾ</Paragraph>
+                                <div className='wrapper-tinhnang'>
+                                    <div className='tinhnang-item mb-50 mt-20'>
+                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature1.png' />
+                                        <Paragraph className='text-h4'>Tính kích thước cắt nhôm, kính, phụ kiện, xuất bản vẽ sản xuất tránh tình trạng cắt sai.</Paragraph>
                                     </div>
-                                    <div className='wrapper-tinhnang'>
-                                        <div className='tinhnang-item mb-50 mt-20'>
-                                            <img className='img-item' alt='icon-feature' src='../images/icon-feature2-1.png' />
-                                            <Paragraph className='text-h4'>Tự vẽ được các dạng cửa theo ý muốn, có thể xuất bản vẽ hình dáng kích thước cửa để chốt quy cách với chủ nhà.</Paragraph>
-                                        </div>
-                                        <div className='tinhnang-item mb-50'>
-                                            <img className='img-item' alt='icon-feature' src='../images/icon-feature2-2.png' />
-                                            <Paragraph className='text-h4'>Tích hợp báo giá chuyên nghiệp làm siêu nhanh, giúp việc làm báo giá trở nên dễ dàng và nhanh chóng chỉ bằng 1 vài click chuột.</Paragraph>
-                                        </div>
-                                        <div className='tinhnang-item mb-50'>
-                                            <img className='img-item' alt='icon-feature' src='../images/icon-feature2-3.png' />
-                                            <Paragraph className='text-h4'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</Paragraph>
-                                        </div>
-                                        <div className='tinhnang-item mb-50'>
-                                            <img className='img-item' alt='icon-feature' src='../images/icon-feature2-4.png' />
-                                            <Paragraph className='text-h4'>Đầy đủ hệ nhôm (được cập nhật thường xuyên).</Paragraph>
-                                        </div>
+                                    <div className='tinhnang-item mb-50'>
+                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2.png' />
+                                        <Paragraph className='text-h4'>Tính giá từng bộ cửa và tổng hợp giá thành theo từng công trình cụ thể, tránh tình trạng làm không biết lời lỗ bao nhiêu.</Paragraph>
                                     </div>
-                                    <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='ripple-btn primary btn-phone btn-first color-4 mt-20 text-center btn-web flex-center btn-video btn-ttk'>
-                                        <div className='wrapper-video-btn'>
-                                            <CaretRightOutlined className='icon-video' />
-                                            XEM THÊM THÔNG TIN BẢN TỰ THIẾT KẾ
-                                        </div>
-                                    </a>
+                                    <div className='tinhnang-item mb-50'>
+                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature3.png' />
+                                        <Paragraph className='text-h4'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</Paragraph>
+                                    </div>
+                                    <div className='tinhnang-item mb-50'>
+                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature4.png' />
+                                        <Paragraph className='text-h4'>Tính kích thước cắt nhôm, kính, phụ kiện, xuất bản vẽ sản xuất tránh tình trạng cắt sai.</Paragraph>
+                                    </div>
                                 </div>
+                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='btn-web flex-center btn-video'>
+                                    <div className='wrapper-video-btn'>
+                                        <CaretRightOutlined className='icon-video' />
+                                        XEM VIDEO BẢN MẪU CÓ SẴN
+                                    </div>
+                                </a>
                             </div>
-                        </Col>
-                    </Row>
+                        </div>
+                    </div>
+                    <div className="feature-mobile">
+                        <div className="single-feture single-feture-bg">
+                            <div className='wrapper-content-mobile'>
+                                <div className='tinhnang'>
+                                    <Paragraph className='text-tinhnang text-h1'>PHIÊN BẢN TỰ THIẾT KẾ</Paragraph>
+                                </div>
+                                <div className='wrapper-tinhnang'>
+                                    <div className='tinhnang-item mb-50 mt-20'>
+                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2-1.png' />
+                                        <Paragraph className='text-h4'>Tự vẽ được các dạng cửa theo ý muốn, có thể xuất bản vẽ hình dáng kích thước cửa để chốt quy cách với chủ nhà.</Paragraph>
+                                    </div>
+                                    <div className='tinhnang-item mb-50'>
+                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2-2.png' />
+                                        <Paragraph className='text-h4'>Tích hợp báo giá chuyên nghiệp làm siêu nhanh, giúp việc làm báo giá trở nên dễ dàng và nhanh chóng chỉ bằng 1 vài click chuột.</Paragraph>
+                                    </div>
+                                    <div className='tinhnang-item mb-50'>
+                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2-3.png' />
+                                        <Paragraph className='text-h4'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</Paragraph>
+                                    </div>
+                                    <div className='tinhnang-item mb-50'>
+                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2-4.png' />
+                                        <Paragraph className='text-h4'>Đầy đủ hệ nhôm (được cập nhật thường xuyên).</Paragraph>
+                                    </div>
+                                </div>
+                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='btn-web flex-center btn-video btn-video2'>
+                                    <div className='wrapper-video-btn'>
+                                        <CaretRightOutlined className='icon-video' />
+                                        XEM THÊM THÔNG TIN BẢN TỰ THIẾT KẾ
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -481,7 +478,7 @@ function Home() {
             </div>
 
             <div id='price' className="section-full price-bg">
-                <div className="header-price mb-50">
+                <div className="header-price">
                     <div className="section-head-icon text-center price-bg-header">
                         <Paragraph className="text-h2">BẢNG GIÁ</Paragraph>
                     </div>
@@ -495,9 +492,9 @@ function Home() {
                         <Col md={8} sm={24} xs={24}>
                             <div className="single-pricing-table price-color-4 m-mb">
                                 <div className="price-head">
-                                    <Paragraph className="text-h6">3 tháng</Paragraph>
+                                    <p className="text-h6">3 tháng</p>
                                 </div>
-                                <div className="price relative">
+                                <div className="price">
                                     <div className="position-text-h3">
                                         <Paragraph className="text-h3">
                                             <sup className="text-sup1">đ</sup>80.000<sub className="text-sup2">tháng</sub>
@@ -518,16 +515,11 @@ function Home() {
                             </div>
                         </Col>
                         <Col md={8} sm={24} xs={24}>
-                            <div className="single-pricing-table price-color-4 center m-mb">
+                            <div className="single-pricing-table price-color-4 m-mb">
                                 <div className="price-head">
-                                    <Paragraph className="text-h6">6 tháng</Paragraph>
+                                    <p className="text-h6">6 tháng</p>
                                 </div>
-                                <div className="price relative">
-                                    <div className="first-circle-3">
-                                        <div className="second-circle">
-                                            <div className="third-circle"></div>
-                                        </div>
-                                    </div>
+                                <div className="price">
                                     <div className="position-text-h3">
                                         <Paragraph className="text-h3">
                                             <sup className="text-sup1">đ</sup>70.000<sub className="text-sup2">tháng</sub>
@@ -550,14 +542,9 @@ function Home() {
                         <Col md={8} sm={24} xs={24}>
                             <div className="single-pricing-table price-color-4">
                                 <div className="price-head">
-                                    <Paragraph className="text-h6">1 năm</Paragraph>
+                                    <p className="text-h6">1 năm</p>
                                 </div>
-                                <div className="price relative">
-                                    <div className="first-circle-3">
-                                        <div className="second-circle">
-                                            <div className="third-circle"></div>
-                                        </div>
-                                    </div>
+                                <div className="price">
                                     <div className="position-text-h3">
                                         <Paragraph className="text-h3">
                                             <sup className="text-sup1">đ</sup>60.000<sub className="text-sup2">tháng</sub>

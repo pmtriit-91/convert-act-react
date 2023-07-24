@@ -254,6 +254,11 @@
             }
         }
 
+        .wrapper-nav{
+            display: flex;
+            justify-content: flex-end;
+        }
+
         .main-menu {
             ul li a {
                 font-size: 1.6rem;
