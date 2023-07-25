@@ -47,7 +47,12 @@ function ThemeHeader() {
                         <Col lg={11} md={9} sm={24} className={cx('wrapper-logo')}>
                             <div className={cx("logo", "logo-edit")}>
                                 <a href="/">
-                                    <img src="../images/logoNew.png" alt="logo" style={{ width: 75 }} />
+                                    <img 
+                                        src="../images/logoNew.png" 
+                                        alt="logo" 
+                                        width={75}
+                                        height={75}
+                                    />
                                 </a>
                             </div>
                             <div className={cx('wrap-text-logo')}>

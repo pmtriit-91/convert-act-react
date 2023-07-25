@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Layout, Row, Col, Typography } from 'antd'
 import { CaretRightOutlined } from '@ant-design/icons'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -13,6 +13,8 @@ gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(TextPlugin)
 
 function Home() {
+    const [isMobile, setIsMobile] = useState(false)
+
     const tinhnang1 = useRef(null)
     const textTopLeft = useRef(null)
     const textBottomLeft = useRef(null)
@@ -199,7 +201,7 @@ function Home() {
         gsap.effects.scroll(textTopRight2.current)
         gsap.effects.scroll(textBottomRight2.current)
 
-
+        //handle mouseenter price box
         const handleColorPrice = (event) => {
             const elm = event.currentTarget
             const textH3 = elm.querySelector('.text-h3')
@@ -210,10 +212,21 @@ function Home() {
             elm.addEventListener('mouseenter', handleColorPrice)
         })
 
+        //handle click button on mobile
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768)
+        }
+        handleResize()
+        window.addEventListener('resize', handleResize)
+
+        //clear event
         return () => {
+            //clear event mouseenter price
             document.querySelectorAll('.price-color-4').forEach((elm) => {
                 elm.removeEventListener('mouseenter', handleColorPrice)
             })
+            //clear event click button
+            window.removeEventListener('resize', handleResize)
         }
     }, [])
 
@@ -229,10 +242,21 @@ function Home() {
                     <div className="container">
                         <Row gutter={30} className=" fitscreen">
                             <Col lg={9} md={9} sm={24} className="wrapper-content-app">
-                                <img src="../images/iphonenew.webp" alt="iphone-left" className="iphone-img" />
+                                <img
+                                    className="iphone-img"
+                                    // fetchpriority="high"
+                                    src="../images/iphonenew.webp?time=date.now"
+                                    alt="iphone-left"
+                                />
                                 <div className="div-qr">
-                                    <img src="../images/qr1.png" alt="qr" className="qr" />
-                                    <a href="http://onelink.to/ppfgn7" className='btn-web flex-center btn-first'>
+                                    <img
+                                        className="qr"
+                                        src="../images/qr1.png"
+                                        alt="qr"
+                                        width={124}
+                                        height={124}
+                                    />
+                                    <a href="http://onelink.to/ppfgn7" className='btn-web flex-center btn-first' target={'_blank'} rel='noopener noreferrer'>
                                         TẢI VỀ ĐIỆN THOẠI
                                     </a>
                                     <p className="p-qr">(hoặc dùng camera điện thoại để quét)</p>
@@ -240,17 +264,28 @@ function Home() {
                                         DÙNG BẢN WEB
                                     </a>
                                     <p className="p-qr">(Tạo tài khoản trên điện thoại trước)</p>
-                                    <a target="blank" href="https://cuongact.com/phan-mem-thiet-ke-cua-nhom-kinh-act/" className="btn-text">
+                                    <a target="_blank" href="https://cuongact.com/phan-mem-thiet-ke-cua-nhom-kinh-act/" className="btn-text" rel='noopener noreferrer'>
                                         TÌM HIỂU THÊM PHIÊN BẢN TỰ VẼ TRÊN MÁY TÍNH
                                     </a>
-                                    <a href={'/sign'} className='btn-web flex-center btn-select'>
+                                    <a
+                                        className={`btn-web flex-center btn-first`}
+                                        href='https://cuongact.com/phan-mem-thiet-ke-cua-nhom-kinh-act'
+                                        target={isMobile ? '_self' : '_blank'}
+                                        rel={isMobile ? '' : 'noopener noreferrer'}
+                                    >
                                         CHỌN
                                     </a>
                                 </div>
                             </Col>
                             <Col lg={15} md={15} sm={24} className="d-flex wrapper-content-text hidden-mobile">
                                 <div className="banner-right-content">
-                                    <img className='laptop ltmb' src='../images/laptop1.webp' alt='laptop1' />
+                                    <img
+                                        className='laptop'
+                                        src='../images/laptop1.webp'
+                                        width="520"
+                                        height="308"
+                                        alt='laptop1'
+                                    />
                                     <img className='phone_right prmb' src='../images/phone_right.webp' alt='phone-right' />
                                     <Paragraph className="text-h1">
                                         <span className='act-text'>ACT</span>
@@ -308,9 +343,20 @@ function Home() {
                                     <div className='bottom-right'>
                                         <h1 ref={textBottomRight} className='text-bottom-right text-size-features'> Đầy đủ hệ nhôm (được cập nhật thường xuyên) và đa dạng mẫu cửa cho người dùng lựa chọn.</h1>
                                     </div>
-                                    <img className='tinhnang_img' src='../images/tinhnang_icon.webp' alt='icon' />
+                                    <img
+                                        className='tinhnang_img'
+                                        src='../images/tinhnang_icon.webp'
+                                        width="1100"
+                                        height="652"
+                                        alt='anh-tinhnang'
+                                    />
                                 </div>
-                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='btn-web flex-center btn-video'>
+                                <a
+                                    className='btn-web flex-center btn-video'
+                                    href={'https://www.youtube.com/embed/45bH7w1xYbQ'}
+                                    target={'_blank'}
+                                    rel='noopener noreferrer'
+                                >
                                     <div className='wrapper-video-btn'>
                                         <CaretRightOutlined className='icon-video' />
                                         XEM VIDEO BẢN MẪU CÓ SẴN
@@ -338,9 +384,20 @@ function Home() {
                                     <div className='bottom-right bottom-right2'>
                                         <h1 ref={textBottomRight2} className='text-bottom-right text-size-features'> Đầy đủ hệ nhôm<br /> (được cập nhật thường xuyên).</h1>
                                     </div>
-                                    <img className='tinhnang_img' src='../images/tinhnang_icon.webp' alt='icon' />
+                                    <img
+                                        className='tinhnang_img'
+                                        src='../images/tinhnang_icon.webp'
+                                        width="1100"
+                                        height="652"
+                                        alt='anh-tinhnang'
+                                    />
                                 </div>
-                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='btn-web flex-center btn-video btn-video2'>
+                                <a
+                                    className='btn-web flex-center btn-video btn-video2'
+                                    href='https://cuongact.com/phan-mem-thiet-ke-cua-nhom-kinh-act'
+                                    target={'_blank'}
+                                    rel='noopener noreferrer'
+                                >
                                     <div className='wrapper-video-btn'>
                                         <CaretRightOutlined className='icon-video' />
                                         XEM THÊM THÔNG TIN BẢN TỰ THIẾT KẾ
@@ -357,21 +414,45 @@ function Home() {
                                     <Paragraph className='text-tinhnang text-h1'>PHIÊN BẢN MẪU CÓ SẴN</Paragraph>
                                 </div>
                                 <div className='wrapper-tinhnang'>
-                                    <div className='tinhnang-item mb-50 mt-20'>
-                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature1.png' />
+                                    <div className='tinhnang-item mt-20'>
+                                        <img
+                                            className='img-item'
+                                            alt='icon-feature'
+                                            src='../images/icon-feature1.png'
+                                            width='250'
+                                            height='218'
+                                        />
                                         <Paragraph className='text-h4'>Tính kích thước cắt nhôm, kính, phụ kiện, xuất bản vẽ sản xuất tránh tình trạng cắt sai.</Paragraph>
                                     </div>
-                                    <div className='tinhnang-item mb-50'>
-                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2.png' />
+                                    <div className='tinhnang-item '>
+                                        <img
+                                            className='img-item'
+                                            alt='icon-feature'
+                                            src='../images/icon-feature2.png'
+                                            width='250'
+                                            height='218'
+                                        />
                                         <Paragraph className='text-h4'>Tính giá từng bộ cửa và tổng hợp giá thành theo từng công trình cụ thể, tránh tình trạng làm không biết lời lỗ bao nhiêu.</Paragraph>
                                     </div>
-                                    <div className='tinhnang-item mb-50'>
-                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature3.png' />
+                                    <div className='tinhnang-item '>
+                                        <img
+                                            className='img-item'
+                                            alt='icon-feature'
+                                            src='../images/icon-feature3.png'
+                                            width='250'
+                                            height='218'
+                                        />
                                         <Paragraph className='text-h4'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</Paragraph>
                                     </div>
-                                    <div className='tinhnang-item mb-50'>
-                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature4.png' />
-                                        <Paragraph className='text-h4'>Tính kích thước cắt nhôm, kính, phụ kiện, xuất bản vẽ sản xuất tránh tình trạng cắt sai.</Paragraph>
+                                    <div className='tinhnang-item '>
+                                        <img
+                                            className='img-item'
+                                            alt='icon-feature'
+                                            src='../images/icon-feature4.png'
+                                            width='250'
+                                            height='218'
+                                        />
+                                        <Paragraph className='text-h4'>Đầy đủ hệ nhôm (được cập nhật thường xuyên) và đa dạng mẫu cửa cho người dùng lựa chọn.</Paragraph>
                                     </div>
                                 </div>
                                 <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='btn-web flex-center btn-video'>
@@ -390,27 +471,51 @@ function Home() {
                                     <Paragraph className='text-tinhnang text-h1'>PHIÊN BẢN TỰ THIẾT KẾ</Paragraph>
                                 </div>
                                 <div className='wrapper-tinhnang'>
-                                    <div className='tinhnang-item mb-50 mt-20'>
-                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2-1.png' />
+                                    <div className='tinhnang-item  mt-20'>
+                                        <img
+                                            className='img-item'
+                                            alt='icon-feature'
+                                            src='../images/icon-feature2-1.png'
+                                            width='250'
+                                            height='218'
+                                        />
                                         <Paragraph className='text-h4'>Tự vẽ được các dạng cửa theo ý muốn, có thể xuất bản vẽ hình dáng kích thước cửa để chốt quy cách với chủ nhà.</Paragraph>
                                     </div>
-                                    <div className='tinhnang-item mb-50'>
-                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2-2.png' />
+                                    <div className='tinhnang-item '>
+                                        <img
+                                            className='img-item'
+                                            alt='icon-feature'
+                                            src='../images/icon-feature2-2.png'
+                                            width='250'
+                                            height='218'
+                                        />
                                         <Paragraph className='text-h4'>Tích hợp báo giá chuyên nghiệp làm siêu nhanh, giúp việc làm báo giá trở nên dễ dàng và nhanh chóng chỉ bằng 1 vài click chuột.</Paragraph>
                                     </div>
-                                    <div className='tinhnang-item mb-50'>
-                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2-3.png' />
+                                    <div className='tinhnang-item '>
+                                        <img
+                                            className='img-item'
+                                            alt='icon-feature'
+                                            src='../images/icon-feature2-3.png'
+                                            width='250'
+                                            height='218'
+                                        />
                                         <Paragraph className='text-h4'>Tổng hợp vật tư: nhôm, kính, phụ kiện, ra bảng pha cắt tiết kiệm nhôm giảm lượng lớn đề xê.</Paragraph>
                                     </div>
-                                    <div className='tinhnang-item mb-50'>
-                                        <img className='img-item' alt='icon-feature' src='../images/icon-feature2-4.png' />
+                                    <div className='tinhnang-item '>
+                                        <img
+                                            className='img-item'
+                                            alt='icon-feature'
+                                            src='../images/icon-feature2-4.png'
+                                            width='250'
+                                            height='218'
+                                        />
                                         <Paragraph className='text-h4'>Đầy đủ hệ nhôm (được cập nhật thường xuyên).</Paragraph>
                                     </div>
                                 </div>
-                                <a href={'https://www.youtube.com/embed/45bH7w1xYbQ'} className='btn-web flex-center btn-video btn-video2'>
+                                <a href='https://cuongact.com/phan-mem-thiet-ke-cua-nhom-kinh-act' className='btn-web flex-center btn-video btn-video2 btn-mobile'>
                                     <div className='wrapper-video-btn'>
                                         <CaretRightOutlined className='icon-video' />
-                                        XEM THÊM THÔNG TIN BẢN TỰ THIẾT KẾ
+                                        XEM THÊM BẢN TỰ THIẾT KẾ
                                     </div>
                                 </a>
                             </div>
@@ -436,39 +541,93 @@ function Home() {
                         <Col lg={14} md={24} sm={24} className="why-use-right">
                             <ul className='list-text'>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span ref={t1} className='text-description'>Đa dạng hệ nhôm, hệ nhôm được cập nhật thường xuyên (hơn 100 hệ nhôm)</span>
                                 </li>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span className='text-description'>Khách hàng được hỗ trợ miễn phí trọn đời khi sử dụng sản phẩm</span>
                                 </li>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span className='text-description'>Giao diện thân thiện, dễ sử dụng, chỉ cần 5 phút để làm quen là có thể sử dụng được ngay</span>
                                 </li>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span className='text-description'>Giúp tiết kiệm thời gian tính toán đau đầu, không lo tính nhầm, cắt sai</span>
                                 </li>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span className='text-description'>Đầy đủ giải pháp cho người dùng linh hoạt sử dụng, app, web, bản cài đặt trên máy tính</span>
                                 </li>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span className='text-description'>Sơ đồ vẽ được bố trí tối ưu nhất giúp người dùng dễ lựa chọn và vẽ cửa 1 cách dễ dàng</span>
                                 </li>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span className='text-description'>Có đầy đủ video hướng dẫn sử dụng 1 cách khoa học giúp những người mới có thể sử dụng thành thạo phần mềm trong thời gian ngắn nhất</span>
                                 </li>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span className='text-description'>ACT luôn lắng nghe, thấu hiểu và đưa ra những giải pháp hỗ trợ tối ưu nhất cho từng khách hàng</span>
                                 </li>
                                 <li className='item-text'>
-                                    <img src='../images/tick_icon.png' alt='icon-check' className='icon-check' />
+                                    <img
+                                        className='icon-check'
+                                        src='../images/tick_icon.png'
+                                        alt='icon-check'
+                                        width={100}
+                                        height={95}
+                                    />
                                     <span className='text-description'>Với nhiều năm kinh nghiệm trong lĩnh vực nhôm kính, ACT đảm bảo các số liệu chuẩn xác, tin cậy chính xác tuyệt đối, ngoài ra ACT còn hỗ trợ điều chỉnh số liệu theo đúng ý từng khách hàng nếu khách hàng có nhu cầu</span>
                                 </li>
                             </ul>
@@ -522,7 +681,7 @@ function Home() {
                                 <div className="price">
                                     <div className="position-text-h3">
                                         <Paragraph className="text-h3">
-                                            <sup className="text-sup1">đ</sup>70.000<sub className="text-sup2">tháng</sub>
+                                            <sup className="text-sup1">đ</sup>68.000<sub className="text-sup2">tháng</sub>
                                         </Paragraph>
                                     </div>
                                 </div>
@@ -547,7 +706,7 @@ function Home() {
                                 <div className="price">
                                     <div className="position-text-h3">
                                         <Paragraph className="text-h3">
-                                            <sup className="text-sup1">đ</sup>60.000<sub className="text-sup2">tháng</sub>
+                                            <sup className="text-sup1">đ</sup>59.000<sub className="text-sup2">tháng</sub>
                                         </Paragraph>
                                     </div>
                                 </div>

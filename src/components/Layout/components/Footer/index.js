@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Typography, Layout, Row, Col } from 'antd'
 import {
     EnvironmentFilled,
@@ -14,6 +14,51 @@ const { Content } = Layout
 const { Paragraph } = Typography
 
 function Footer() {
+    //fix hiệu suất youtube embed
+    const iframeRef = useRef(null)
+    useEffect(() => {
+        // Xác định các tùy chọn của Intersection Observer
+        const options = {
+            root: null, // Viewport là root
+            rootMargin: '0px', // Không thêm khoảng cách root margin
+            threshold: 0.2, // Gọi hàm callback khi ít nhất 20% của phần tử xuất hiện trong viewport
+        };
+
+        // Hàm callback sẽ được gọi khi phần tử xuất hiện trong viewport
+        const handleIntersection = (entries, observer) => {
+            entries.forEach((entry) => {
+                // Kiểm tra xem video có nằm trong viewport không
+                if (entry.isIntersecting) {
+                    // Nếu video xuất hiện, thì gán giá trị cho thuộc tính src để tải video
+                    const iframe = iframeRef.current;
+                    const dataSrc = iframe.getAttribute('datasrc')
+                    if (dataSrc) {
+                        iframe.setAttribute('src', dataSrc)
+                    }
+
+                    // Dừng quan sát video sau khi nó đã được tải
+                    observer.unobserve(entry.target)
+                }
+            })
+        }
+
+        // Tạo một instance của Intersection Observer
+        const observer = new IntersectionObserver(handleIntersection, options)
+
+        // Bắt đầu quan sát video
+        if (iframeRef.current) {
+            observer.observe(iframeRef.current)
+        }
+
+        // Hủy quan sát khi component bị unmount
+        const currentIframe = iframeRef.current
+        return () => {
+            if (currentIframe) {
+                observer.unobserve(currentIframe)
+            }
+        }
+    }, [])
+
     return (
         <Content className='component-themefooter' id='contact'>
             <div>
@@ -45,13 +90,16 @@ function Footer() {
                                         <div className="ins-video">
                                             <iframe
                                                 className='video'
-                                                width="427"
-                                                height="240"
-                                                src="https://www.youtube.com/embed/owEjKRXwo1o"
-                                                title="Hướng dẫn làm báo giá cửa nhôm kính phụ kiện gộp vào đơn giá"
+                                                ref={iframeRef}
+                                                width="640"
+                                                height="390"
                                                 loading="lazy"
+                                                datasrc="https://www.youtube.com/embed/NUrzZywriRk"
+                                                title="Hướng dẫn làm báo giá cửa nhôm kính phụ kiện gộp vào đơn giá"
+                                                allowFullScreen
+                                            // preload="none"
                                             ></iframe>
-                                            <a className='link-video' href='https://www.youtube.com/watch?v=owEjKRXwo1o&autoplay=0' target="_blank" rel="noreferrer"> &gt;&gt; Video làm báo giá chuyên nghiệp siêu nhanh</a>
+                                            <a className='link-video' href='https://www.youtube.com/watch?v=NUrzZywriRk&autoplay=0' target="_blank" rel="noreferrer"> &gt;&gt; Video làm báo giá chuyên nghiệp siêu nhanh</a>
                                         </div>
                                     </div>
                                 </div>
@@ -127,10 +175,10 @@ function Footer() {
                                 <Paragraph className='title-bottom-footer'>&copy; {(new Date().getFullYear())}<span>|</span><a href="/#top">ACT đồng hành sản xuất cửa cùng bạn</a></Paragraph>
                             </div>
                             <div className="footer-social-link">
-                                <a href="https://www.facebook.com/phanmemsanxuatcua"><img src="../images/logo_social/facebook.png" alt='anh facebook' /></a>
-                                <a href="https://www.facebook.com/phanmemsanxuatcua"><img src="../images/logo_social/twitter.png" alt='anh twitter' /></a>
-                                <a href="https://www.youtube.com/watch?v=45bH7w1xYbQ"><img src="../images/logo_social/youtube.png" alt='anh youtube' /></a>
-                                <a href="https://mail.google.com"><img src="../images/logo_social/google.png" alt='anh gmale' /></a>
+                                <a href="https://www.facebook.com/phanmemsanxuatcua"><img src="../images/logo_social/facebook.png" alt='anh facebook' width={64} height={64} /></a>
+                                <a href="https://www.facebook.com/phanmemsanxuatcua"><img src="../images/logo_social/twitter.png" alt='anh twitter' width={64} height={64} /></a>
+                                <a href="https://www.youtube.com/watch?v=45bH7w1xYbQ"><img src="../images/logo_social/youtube.png" alt='anh youtube' width={64} height={64} /></a>
+                                <a href="https://mail.google.com"><img src="../images/logo_social/google.png" alt='anh gmail' width={64} height={64} /></a>
                             </div>
                         </div>
                     </div>

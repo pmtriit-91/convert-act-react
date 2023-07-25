@@ -85,7 +85,8 @@
     }
 
     .wrapper-top {
-        background-image: url('../../assets/images/img-background.webp');
+        // background-image: url('../../../public/images/img-background.webp');
+        background-image: url('../../assets/images/img-background.webp?time=date.now');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -115,6 +116,7 @@
 
             .qr {
                 width: 125px;
+                height: auto;
                 padding-bottom: 40px;
                 padding-top: 40px;
             }
@@ -129,7 +131,7 @@
                 font-weight: 600;
                 border-radius: 8px;
 
-                &:hover{
+                &:hover {
                     background-color: rgba(255, 0, 0, 0.8);
                 }
             }
@@ -163,10 +165,11 @@
             height: 100%;
 
             .laptop {
+                position: sticky;
+                width: 460px;
+                height: auto;
                 margin-top: 124px;
                 margin-left: 30px;
-                width: 460px;
-                position: sticky;
                 z-index: 10 !important;
             }
 
@@ -317,8 +320,13 @@
                     }
 
                     .img-item {
-                        width: 130px;
+                        max-width: 130px;
+                        height: auto;
                     }
+                }
+
+                .btn-mobile{
+                    width: 280px;
                 }
             }
         }
@@ -396,6 +404,7 @@
 
                 .tinhnang_img {
                     max-width: 1000px;
+                    height: auto;
                 }
             }
 
@@ -523,6 +532,7 @@
 
                 .icon-check {
                     width: 24px;
+                    height: auto;
                     margin-right: 6px;
                     margin-bottom: 6px;
                 }
@@ -830,6 +840,7 @@
 
                 .qr {
                     width: 100px;
+                    height: auto;
                     padding: 0;
                     margin-bottom: 32px;
                 }
@@ -855,6 +866,7 @@
 
                     .laptop {
                         width: 390px;
+                        height: auto;
                         margin-top: 130px;
                     }
 
@@ -884,6 +896,7 @@
                 .wrapper-content {
                     .tinhnang_img {
                         max-width: 900px;
+                        height: auto;
                     }
 
                     .tinhnang {
@@ -961,6 +974,7 @@
 
                 .qr {
                     width: 80px;
+                    height: auto;
                     padding: 0px;
                     margin-bottom: 20px;
                 }
@@ -996,6 +1010,7 @@
 
                 .laptop {
                     width: 300px;
+                    height: auto;
                     margin-left: 74px;
                     margin-top: 240px;
                 }
@@ -1021,6 +1036,7 @@
                 .wrapper-content {
                     .tinhnang_img {
                         max-width: 680px;
+                        height: auto;
                     }
 
                     .tinhnang {
@@ -1182,6 +1198,7 @@
 
                 .qr {
                     width: 80px;
+                    height: auto;
                     padding-top: 62px;
                     padding-bottom: 10px;
                 }
@@ -1224,9 +1241,10 @@
 
                 .laptop {
                     position: absolute;
-                    width: 290px;
                     top: 120px;
                     left: -174px;
+                    width: 290px;
+                    height: auto;
                     margin: 0;
                 }
 
@@ -1260,6 +1278,7 @@
             background-image: url('../../assets/images/why-use-mobile.webp');
             background-size: inherit;
             background-repeat: no-repeat;
+
             .why-use-left {
                 .wrapper-question {
                     height: 350px;

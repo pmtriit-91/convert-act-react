@@ -239,6 +239,7 @@
 
                 img {
                     width: 15px;
+                    height: auto;
                 }
             }
         }
@@ -267,6 +268,7 @@
 
     @media (max-width: 767px) {
         .footer-widget {
+            padding-bottom: 0;
             .section-head-icon {
                 height: 80px;
                 margin-bottom: 30px;
@@ -293,15 +295,19 @@
 
         .default-footer {
             padding: 0;
-            .mobile-center{
+
+            .mobile-center {
                 align-items: center;
             }
+
             .footer-copy-right {
                 font-size: 1rem;
             }
-            .footer-social-link{
+
+            .footer-social-link {
                 margin-top: 0;
-                a{
+
+                a {
                     width: 22px;
                     line-height: 20px;
                 }
