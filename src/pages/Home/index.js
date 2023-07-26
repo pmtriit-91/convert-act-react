@@ -244,8 +244,7 @@ function Home() {
                             <Col lg={9} md={9} sm={24} className="wrapper-content-app">
                                 <img
                                     className="iphone-img"
-                                    // fetchpriority="high"
-                                    src="../images/iphonenew.webp?time=date.now"
+                                    src="../images/iphonenew.webp"
                                     alt="iphone-left"
                                 />
                                 <div className="div-qr">
